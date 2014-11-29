@@ -42,9 +42,8 @@ define([
 
     that.createWaveform();
     that.createRefWaveform();
-    that.createUi();
-
     that.stage.add(that.waveformLayer);
+    that.createUi();
 
     // INTERACTION ===============================================
     var cancelSeeking = function(){
@@ -156,6 +155,7 @@ define([
 
     this.uiLayer.add(this.playheadLine);
     this.stage.add(this.uiLayer);
+    this.uiLayer.moveToTop();
   };
 
   /*WaveformOverview.prototype.updateWaveform = function () {

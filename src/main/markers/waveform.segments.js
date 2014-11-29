@@ -20,6 +20,7 @@ define([
         view.segmentLayer = new Kinetic.Layer();
         view.stage.add(view.segmentLayer);
         view.segmentLayer.moveToTop();
+        view.uiLayer.moveToTop();
       }
 
       return view;
