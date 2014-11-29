@@ -64,7 +64,13 @@ define([
         segmentGroup.label = new peaks.options.segmentLabelDraw(segmentGroup, segment);
         segmentGroup.add(segmentGroup.label.hide());
 
-        if (editable) {
+        if (Array.isArray(editable)) {
+          segmentGroup.inMarker = new peaks.options.segmentInMarker(editable[0], segmentGroup, segment, segmentHandleDrag);
+          segmentGroup.add(segmentGroup.inMarker);
+
+          segmentGroup.outMarker = new peaks.options.segmentOutMarker(editable[1], segmentGroup, segment, segmentHandleDrag);
+          segmentGroup.add(segmentGroup.outMarker);
+        } else if (editable) {
           var draggable = true;
           if (segmentGroup === segmentOverviewGroup) {
             draggable = false;
