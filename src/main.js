@@ -311,6 +311,18 @@ define('peaks', [
 
           getSegments: function () {
             return self.waveform.segments.segments;
+          },
+
+          getSegmentByTime: function(time) {
+            var fnFilter = function(segment) {
+              return segment.startTime <= time && segment.endTime >= time;
+            }
+
+            return self.waveform.segments.segments.filter(fnFilter);
+          },
+
+          getCurrentSegment: function() {
+            return this.getSegmentByTime(peaks.time.getCurrentTime());
           }
         };
       }
