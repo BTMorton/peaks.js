@@ -72,9 +72,9 @@ define([
           segmentGroup.add(segmentGroup.outMarker);
         } else if (editable) {
           var draggable = true;
-          if (segmentGroup === segmentOverviewGroup) {
+          /*if (segmentGroup === segmentOverviewGroup) {
             draggable = false;
-          }
+          }*/
 
           segmentGroup.inMarker = new peaks.options.segmentInMarker(draggable, segmentGroup, segment, segmentHandleDrag);
           segmentGroup.add(segmentGroup.inMarker);
