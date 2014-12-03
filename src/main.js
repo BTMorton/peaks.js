@@ -322,7 +322,7 @@ define('peaks', [
           },
 
           getCurrentSegment: function() {
-            return this.getSegmentByTime(peaks.time.getCurrentTime());
+            return this.getSegmentByTime(self.time.getCurrentTime());
           }
         };
       }
