@@ -58,10 +58,10 @@ define([
         if (event.type == "mousedown") {
           peaks.seeking = true;
 
-          peaks.emit("user_seek.overview", that.data.time(event.evt.layerX), event.evt.layerX);
+          peaks.emit("user_seek.overview", that.data.time(event.evt.offsetX), event.evt.offsetX);
 
           that.stage.on("mousemove", function (event) {
-            peaks.emit("user_scrub.overview", that.data.time(event.evt.layerX), event.evt.layerX);
+            peaks.emit("user_scrub.overview", that.data.time(event.evt.offsetX), event.evt.offsetX);
           });
 
           that.stage.on("mouseup", cancelSeeking);
